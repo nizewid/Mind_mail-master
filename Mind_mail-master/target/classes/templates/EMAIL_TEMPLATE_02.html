@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Demystifying Email Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #boxTable {
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            width: 750px;
+            height: 1502px;
+            background: #F5F5F5 0 0 no-repeat padding-box;
+            opacity: 1;
+
+        }
+
+        /*#logo {
+            top: 91px;
+            left: 79px;
+            width: 188px;
+            height: 71px;
+            background: transparent url('https://josegflores.es/wp-content/uploads/2022/10/logo-mind.png') 0 0 no-repeat padding-box;
+            opacity: 1;
+            display: block;
+            line-height: 0;
+
+        }*/
+
+        #innerTable {
+
+            top: 41px;
+            left: 25px;
+            width: 700px;
+            height: 1189px;
+            background: #FFFFFF 0 0 no-repeat padding-box;
+            opacity: 1;
+            margin: auto;
+            border: none;
+        }
+        #innerTable tr{
+            border: none;
+
+        }
+        #innerTable td{
+
+            border: none;
+        }
+
+        .marginCell td {
+            padding-left: 54px;
+            padding-right: 50px;
+
+        }
+
+        .mainText {
+            font-family: 'Helvetica Neue', system-ui;
+            font-size: 43px;
+            color: #191C1F;
+        }
+
+        .lightText {
+            font-family: 'Helvetica Neue', serif;
+            font-size: 22px;
+            color: #191C1F;
+            line-height: 24px;
+        }
+
+        #contentTable {
+            top: 610px;
+            left: 77px;
+            width: 599px;
+            height: 420px;
+            background: #F3F4F4 0 0 no-repeat padding-box;
+            opacity: 1;
+            margin: 0 auto;
+            font-family: 'Helvetica Neue', serif;
+            font-size: 20px;
+        }
+
+        .marginH {
+
+            margin-left: 54px;
+            margin-right: 50px;
+        }
+
+        #contentTable img {
+            width: 38px;
+            height: 37px;
+            border-radius: 2px;
+            opacity: 1;
+            background: #C92E7D 0 0 no-repeat padding-box;
+            border: 0 solid #C92E7D;
+            margin-left: 30px;
+        }
+
+
+        #contentTable td.text {
+            width: 90%;
+        }
+
+        #button-mind {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        #footer {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 56px;
+            outline-color: #F3F4F4;
+        }
+
+        h2 {
+            font-family: 'Helvetica Neue', serif;
+            font-size: 40px;
+        }
+
+        h5 {
+            font-family: 'Helvetica Neue', serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<table id="boxTable">
+    <tr>
+        <td>
+            <table id="innerTable">
+                <tr>
+                    <td>
+                        <img src="https://josegflores.es/wp-content/uploads/2022/10/logo-mind.png" class="marginH"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="marginH">
+                            <tr>
+                                <td>
+                                    <p class="mainText">
+                                        Hola Jaime, te damos la bienvenida a Mind app 👋</p>
+                                    <b class="mainText"
+                                       th:text="${'Hola ' + informalName + ' Te damos la Bienvenida a Mind app'}"></b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="lightText"> Nos alegramos de contar con un nuevo miembro en
+                                        nuestra
+                                        comunidad
+                                        Minder.</p>
+                                    <p class="lightText">Un lugar que representa a <strong>las personas, al
+                                        planeta y los
+                                        espacios que habitamos </strong>y en el que juntos te ayudamos a
+                                        lograr tus objetivos.</p>
+                                    <p class="lightText">
+                                        Te animamos a descubrir todas las <strong>herramientas</strong> que
+                                        forman parte de nuestra App:</p><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <table id="contentTable">
+                                    <tr>
+                                        <td><img
+                                                src="https://josegflores.es/wp-content/uploads/2022/10/frame1.png"
+                                                alt="windows frame"></td>
+                                        <td class="text">
+                                            <p>Organiza y asiste con tu empresa a eventos únicos de la
+                                                temática
+                                                que quieras,¡no hay limites!</p>
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img
+                                                src="https://josegflores.es/wp-content/uploads/2022/10/frame2.png"
+                                                alt="bag case"></td>
+                                        <td>
+                                            <p>Reporta incidencias, solicita servicios y crea sugerencias,
+                                                todo
+                                                en clic.
+                                            </p>
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img
+                                                src="https://josegflores.es/wp-content/uploads/2022/10/frame3.png"
+                                                alt="social content"></td>
+                                        <td>
+                                            <p>
+                                                Conecta con tus compañeros y sus intereses, crea momenots
+                                                inolvidables.
+                                            </p>
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img
+                                                src="https://josegflores.es/wp-content/uploads/2022/10/greenlogo.png"
+                                                alt="green mind logo"></td>
+                                        <td><p>
+                                            Aprende a llevar una vida más sostenible y ayuda a mejorar el
+                                            planeta
+                                            con huMind™
+                                        </p>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </tr>
+                            <tr>
+                                <td style="margin: 10px 10px 10px 10px" align="center">
+                                    <a href="#">
+                                        <img id="button-mind" src="https://josegflores.es/wp-content/uploads/2022/10/button_ir-a-mind-app.png" alt="btn ir a Mindapp">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                <tr bgcolor="#F3F4F4" style="border:none">
+                    <td>
+                        <table id="footer">
+                            <tr>
+                                <td>
+                                    <h2>We Mind you.</h2>
+                                    <h5>¿Necesitas ayuda? contacta con nosotros <a
+                                            href="https://www.wemind.es/contacto">aquí.</a></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://es.linkedin.com/company/mind-facility-management">
+                                        <img src="https://josegflores.es/wp-content/uploads/2022/10/linkedin_31p.png"
+                                             alt="logo linkedin"></a>
+                                    <a href="#">
+                                        <img src="https://josegflores.es/wp-content/uploads/2022/10/mail_black_31p.png"
+                                             alt="logo email">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>&copy 2022 Mind Facilities Management</b> | Todos los derechos
+                                    reservados
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://www.wemind.es/"
+                                       th:text="${address}"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+            </table>
+</table>
+</body>
+</html>

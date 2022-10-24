@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Demystifying Email Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        }
+
+        #boxTable {
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            width: 750px;
+            height: 1152px;
+            background: #F5F5F5 0 0 no-repeat padding-box;
+            opacity: 1;
+
+        }
+
+        .marginV {
+            margin-top: 25px;
+        }
+
+        /*#logo {
+            top: 91px;
+            left: 79px;
+            width: 188px;
+            height: 71px;
+            background: transparent url('https://josegflores.es/wp-content/uploads/2022/10/logo-mind.png') 0 0 no-repeat padding-box;
+            opacity: 1;
+            display: block;
+            line-height: 0;
+
+        }*/
+
+        #innerTable {
+
+            top: 41px;
+            left: 25px;
+            width: 700px;
+            height: 836px;
+            background: #FFFFFF 0 0 no-repeat padding-box;
+            opacity: 1;
+            margin: auto;
+
+        }
+
+        #innerTable tr {
+            border: none;
+
+        }
+
+        #innerTable td {
+
+            border: none;
+        }
+
+        .marginCell td {
+            padding-left: 54px;
+            padding-right: 50px;
+
+        }
+
+        .mainText {
+            font-size: 43px;
+            color: #191C1F;
+        }
+
+        .lightText {
+            font-size: 22px;
+            color: #191C1F;
+            line-height: 24px;
+        }
+
+        .boldText {
+            font-weight: bold;
+            color: #191C1F;
+        }
+
+        #contentTable {
+            top: 610px;
+            left: 77px;
+            width: 592px;
+            height: 237px;
+            scale: revert;
+            background: #F3F4F4 0 0 no-repeat padding-box;
+            opacity: 1;
+            margin: 0 auto;
+            border: #127db3;
+            padding: 7px 0 0 30px;
+            border-spacing: 15px 8px ;
+
+        }
+
+        .marginH {
+
+            margin-left: 54px;
+            margin-right: 50px;
+        }
+
+        #contentTable img {
+            width: 38px;
+            height: 37px;
+            border-radius: 2px;
+            opacity: 1;
+            background: #C92E7D 0 0 no-repeat padding-box;
+            border: 0 solid #C92E7D;
+
+        }
+
+        #contentTable marginL {
+            margin-left: 30px;
+        }
+
+        #button-mind {;
+            padding-top: 30px;
+        }
+
+        #footer {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 56px;
+            outline-color: #F3F4F4;
+            background-color: #F3F4F4;
+        }
+
+        h2 {
+
+            font-size: 40px;
+        }
+
+        h5 {
+
+            font-size: 18px;
+        }
+
+        .center {
+            margin: 10px 10px 10px 10px;
+            text-align: center;
+        }
+
+        #contentTable p {
+            font-size: 17px;
+        }
+
+        #contentTable th {
+            font-size: 24px;
+            text-align: left;
+        }
+        .pinkText{
+            color: #C92E7D;
+
+        }
+        #innerTable .tdMedium {
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<table id="boxTable">
+    <tr>
+        <td>
+            <table id="innerTable" class="marginV marginH">
+                <tr>
+                    <td>
+                        <img src="https://josegflores.es/wp-content/uploads/2022/10/logo-mind.png" class="marginH">
+                    </td>
+                </tr>
+                <!-- end logo zone-->
+                <!-- Main Title Email -->
+                <tr>
+                    <td>
+                        <table class="marginH">
+                            <tr style="height: 10px">
+                                <td>
+                                    <p class="mainText">Hola Jaime, has recibido una invitación a un evento 🎉</p>
+                                    <b class="mainText"
+                                       th:text="${'Hola ' + informalName + ', has recibido una invitación a un evento de parte de '+ eventFromName}"></b>
+                                </td>
+                            </tr>
+                            <!-- Context section -->
+                            <tr>
+                                <td>
+                                    <p class="lightText">Puedes consultar todos los detalles, ubicación y lista de
+                                        asistentes del
+                                        evento en la aplicación.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table id="contentTable">
+                                        <tr>
+                                            <th colspan="2">
+                                                Experiencia ofrecida por Elena González
+                                                <p class="boldText"
+                                                   th:text="${'    Experiencia ofrecida por '+ eventFromName }"></p>
+
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td class="imageTd">
+                                                <img src="https://josegflores.es/wp-content/uploads/2022/10/calendarico.png"
+                                                     alt="calendar icon"/>
+                                            </td>
+                                            <td><p class="boldText">20 de febrero del 2021</p>
+                                                <p class="boldText" th:text="${' '+ eventDate }"></p>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="imageTd">
+                                                <img
+                                                        src="https://josegflores.es/wp-content/uploads/2022/10/clockIco.png"
+                                                        alt="clock icon"/>
+                                            </td>
+                                            <td>
+                                                <p class="boldText">18:00 — 19:30</p>
+                                                <b th:text="${' '+ eventStart +' - '+eventFinish}"></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="imageTd">
+                                                <img
+                                                        src="https://josegflores.es/wp-content/uploads/2022/10/locIco.png"
+                                                        alt="location icon"/></td>
+                                            <td><p class="pinkText"><b>Collado Ventoso, 4 · Madrid</b></p>
+                                                <b
+                                                        th:text="${' '+ eventAddress }"> </b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- action buttom -->
+                            <tr>
+                                <td class="tdMedium center">
+                                    <a th:href="${urlEvent}"><img id="button-mind"
+                                                                  src="https://dabuttonfactory.com/button.png?t=Ver+evento&f=Open+Sans-Bold&ts=24&tc=fff&hp=45&vp=20&w=376&h=72&c=round&bgt=unicolored&bgc=c92e7d"
+                                                                  alt="btn ir a Evento">
+                                    </a>
+                                </td>
+                            </tr>
+                            <!-- End of Action Zone -->
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- foooter zone -->
+    <tr>
+        <td>
+            <table id="footer">
+                <tr>
+                    <td>
+                        <h2>We Mind you.</h2>
+                        <h5>¿Necesitas ayuda? Contacta con nosotros <a
+                                href="https://www.wemind.es/contacto">aquí.</a></h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://es.linkedin.com/company/mind-facility-management">
+                            <img src="https://josegflores.es/wp-content/uploads/2022/10/linkedin_31p.png"
+                                 alt="logo linkedin"></a>
+                        <a href="#">
+                            <img src="https://josegflores.es/wp-content/uploads/2022/10/mail_black_31p.png"
+                                 alt="logo email">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>&copy 2022 Mind Facilities Management</b> | Todos los derechos
+                        reservados
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.wemind.es/"
+                           th:text="${address}"></a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+</table>
+</body>
+</html>

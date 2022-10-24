@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Demystifying Email Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+        }
+
+        #boxTable {
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            width: 750px;
+            height: 1164px;
+            background: #F5F5F5 0 0 no-repeat padding-box;
+            opacity: 1;
+
+
+        }
+
+        /*#logo {
+            top: 91px;
+            left: 79px;
+            width: 188px;
+            height: 71px;
+            background: transparent url('https://josegflores.es/wp-content/uploads/2022/10/logo-mind.png') 0 0 no-repeat padding-box;
+            opacity: 1;
+            display: block;
+            line-height: 0;
+
+        }*/
+
+        #innerTable {
+
+            top: 41px;
+            left: 25px;
+            width: 700px;
+            height: 847px;
+            background: #FFFFFF 0 0 no-repeat padding-box;
+            opacity: 1;
+            margin: auto;
+        }
+
+        .marginCell td {
+            padding-left: 54px;
+            padding-right: 50px;
+
+        }
+
+        .mainText {
+            font-size: 43px;
+            color: #191C1F;
+        }
+
+        .lightText {
+            font-size: 22px;
+            color: #191C1F;
+            line-height: 24px;
+        }
+
+        #contentTable {
+            width: 592px;
+            height: 237px;
+            background: #F3F4F4 0 0 no-repeat padding-box;
+            opacity: 1;
+            margin: 0 auto;
+            padding: 10px;
+            mso-cellspacing: 0;
+
+        }
+        #contentTable td{
+
+        }
+
+        #contentTable th {
+        text-align: left;
+        }
+
+        .marginH {
+
+            margin-left: 54px;
+            margin-right: 50px;
+        }
+
+        .marginV {
+            margin-top: 25px;
+        }
+
+        #button-mind {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        #footer {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 56px;
+            outline-color: #F3F4F4;
+            background-color: #F3F4F4;
+
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        h5 {
+            font-size: 18px;
+        }
+
+        .center {
+            margin: 10px 10px 10px 10px;
+            text-align: center;
+        }
+
+        .contentHead {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .contentText {
+
+            font-size: 17px;
+        }
+        .pinkFont{
+            font-size: 18px;
+            font-weight: bold;
+            color: #C92E7D;
+        }
+        .marginL{
+            margin-left: 40px;
+        }
+        .marginR{
+            margin-right: 39px;
+        }
+    </style>
+</head>
+<body>
+<table id="boxTable">
+    <!-- HEADER LOGO ZONE -->
+    <tr>
+        <td>
+            <table id="innerTable" class="marginH marginV">
+                <tr>
+                    <td>
+                        <img src="https://josegflores.es/wp-content/uploads/2022/10/logo-mind.png"
+                             class="marginH marginV"/>
+                    </td>
+                </tr>
+                <!-- END LOGO ZONE -->
+                <!-- +++++++ -->
+                <!-- CONTEXT EMAIL -->
+                <tr>
+                    <td>
+                        <table class="marginH">
+                            <!-- Main Title Email -->
+                            <tr>
+                                <td>
+                                    <p class="mainText">Has recibido un presupuesto para tu solicitud.</p>
+                                    <p class="mainText"
+                                       th:text="${'Hola ' + informalName + ', tienes una nueva notificación 🔔'}"></p>
+                                </td>
+                            </tr>
+                            <!-- Context section -->
+                            <tr>
+                                <td>
+                                    <p class="lightText">Aquí puedes consultar un presupuesto detallado del servicio solicitado. Puedes consultarlo para proceder con el pago o cancelar la solicitud.</p><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellspacing="0" id="contentTable">
+                                        <tr >
+                                            <th >
+                                                <p class="contentHead marginL">Presupuesto para la solicitud #9293</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="contentText marginL">Limpieza · 2h de servicio · 23 de Marzo de 2021</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="contentText marginL">Factura nº SO61/21</p>
+                                                <hr class="marginL marginR">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="pinkFont marginL">Total 36,80 €</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- Button Action Zone -->
+                            <tr>
+                                <td class="center marginV">
+                                    <a href="#">
+                                        <img id="button-mind"
+                                             src="https://dabuttonfactory.com/button.png?t=Ver+presupuesto&f=Open+Sans-Bold&ts=24&tc=fff&hp=45&vp=20&w=376&h=72&c=round&bgt=unicolored&bgc=c92e7d"
+                                             alt="btn ir a Mindapp">
+                                    </a>
+                                </td>
+                            </tr>
+                            <!-- End of Action Zone -->
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Footer Email Template -->
+    <tr>
+        <td>
+            <table id="footer">
+                <tr>
+                    <td>
+                        <h2>We Mind you.</h2>
+                        <h5>¿Necesitas ayuda? contacta con nosotros <a
+                                href="https://www.wemind.es/contacto">aquí.</a></h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://es.linkedin.com/company/mind-facility-management">
+                            <img src="https://josegflores.es/wp-content/uploads/2022/10/linkedin_31p.png"
+                                 alt="logo linkedin"></a>
+                        <a href="#">
+                            <img src="https://josegflores.es/wp-content/uploads/2022/10/mail_black_31p.png"
+                                 alt="logo email">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>&copy 2022 Mind Facilities Management</b> | Todos los derechos
+                        reservados
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.wemind.es/"
+                           th:text="${address}"></a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
